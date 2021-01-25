@@ -2,8 +2,8 @@ title: Oll Korrect # name of the site
 author: Oll Korrect # name of site's author
 email:  # email of site's author
 url: https://opmashin.github.io/Oll_Korrect # root address of the site
-description: > # description of the site (multiple lines allowed)
-  Thought I should start writing.
+description:  
+  An Options exclusive blog.
 
 permalink: /:slug.html
 

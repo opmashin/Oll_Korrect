@@ -7,13 +7,13 @@ This post Discusses How you can use Monte Carlo Sampling to derive the Implied V
 ## Monte Carlo Method.
 
 Monte Carlo is method of computation that relies on repeated random sampling to derive a probabilistically accurate numerical result.
-This method is useful for simulating a complex environment that would otherwiser require complicated math.
-This method favors clarity, easy of implementation and calculation over precision.
-For usecases like IV calculation for Options, since we already take in a significant assumptions with Black Scholes models, Monte Carlo can actually not be that bad.
+This method is useful for simulating a complex environment that would otherwise require complicated math.
+This method favors clarity, ease of implementation and calculation over precision.
+For usecases like IV calculation for Options, since we already take in assumptions with Black Scholes models, Monte Carlo can actually not be that bad.
 
 ## Deriving Options Premium.
 
-The premium price of any options contract embodies the risk that the option writer is willing to take so that the buyer has the option to either excercise the contract or not.
+The premium price of any options contract embodies the risk that the option writer is willing to take so that the buyer has the right to either excercise the contract or not.
 With the Monte Carlo method, we simulate the possible outcomes for the contract on the expiry day based on 100s of random underlying price movement.
 Calculate the possible premium value at expiry based on the 100s of the random Prices at expiry, take the mean of them and voila you have an approximate premium value
 
@@ -41,8 +41,8 @@ def premiumCalculator( price, days, sigma):
     return np.mean(expiry_premium)
 ```
 
-Now we have the premium, who iterate through the possible sigma values to find the the one that provides a premium value most closest to the current premium in the market.
-and use that sigma to  calculate the IV
+Now we have the premium, we now iterate through the possible sigma values to find the the one that provides a premium value closest to the current premium in the market.
+and use that sigma to  calculate the IV.  
 IV can be derived from the following formula
 
 ![std to iv](https://raw.githubusercontent.com/opmashin/Oll_Korrect/master/images/std_to_iv.png)

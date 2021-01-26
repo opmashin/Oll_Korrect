@@ -60,3 +60,5 @@ def ivCalculator( price, days, act_premium):
             implied_sigma = sigma
     return (implied_sigma*np.sqrt(365/days)*100/price)
 ```
+
+Complete code : https://gist.github.com/opmashin/7dbf1b8d6e64d6b82b3753c6960decc6
